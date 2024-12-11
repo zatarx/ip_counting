@@ -1,11 +1,10 @@
-package help
+package misc
 
 import (
 	"bufio"
 	"fmt"
 	"math"
 	"os"
-	"runtime"
 	"strconv"
 	"strings"
 	"math/bits"
@@ -27,15 +26,10 @@ func singleThreadedMain() {
 
 	PrintMemUsage()
 
-	// uniqueIps := make(map[string]struct{}) // map with empty keys
 	scanner := bufio.NewScanner(file)
 
 	for scanner.Scan() {
 		var octets = [4]uint32{}
-		// sem := make(chan struct{}, 3)
-		if len(octets) > 0 {
-
-		}
 
 		strOctets := strings.Split(scanner.Text(), ".")
 
@@ -53,15 +47,7 @@ func singleThreadedMain() {
 		decimalIp := translateIpToDecimal(octets)
 		byteIndex, bitIndex := decimalIp/8, decimalIp%8
 
-		// println("decimal ip byte index and bit index:", byteIndex, bitIndex, decimalIp)
-
 		ipMap[byteIndex] |= uint8(math.Pow(2.0, float64(bitIndex)))
-
-		// PrintMemUsage()
-		runtime.GC()
-		// println("byte index:", byteIndex, "byte value: ",
-		// 	ipMap[byteIndex], "index new value: ", ipMap[byteIndex]|uint8(math.Pow(2.0, float64(bitIndex))))
-		// ipAddr, err := strconv.Atoi(ipStr)
 
 	}
 
