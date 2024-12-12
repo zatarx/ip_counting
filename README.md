@@ -12,9 +12,17 @@ I used goroutines to split up ip counting.
 ```
 File Size: 5.69GB
 CPU Cores : 8
-Peak Memory Usage: 1.6GB
+Avg/Peak Memory Usage: 1.3-1.6GB
 Execution Time: 190-220s (~3-4 minutes)
-Goroutine Execution Memory Overhead: 1.1GB
+Goroutine Execution Memory Overhead: 0.8-1.1GB
+```
+
+```
+File Size: 40.55GB
+CPU Cores : 8
+Avg/Peak Memory Usage: ~1.5-2GB
+Execution Time: 1525.870777 seconds (~26 minutes)
+Goroutine Execution Memory Overhead: ~1-1.5GB
 ```
 
 ### Potential Improvements
